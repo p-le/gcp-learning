@@ -1,0 +1,17 @@
+---
+plugin: gcp_compute
+projects:
+  - ci-cid-stage
+zones:
+  - asia-northeast1-b
+filters: []
+keyed_groups:
+  - prefix: gcp
+    key: labels
+auth_kind: serviceaccount
+service_account_file: "../../config/stage-provisioner-credentials.json"
+hostnames: # list inventory by instance name not default public IP
+  - name
+compose:
+  ansible_host: networkInterfaces[0].accessConfigs[0].natIP # let ansible use public ip for ssh
+  ansible_host_private_ip: networkInterfaces[0].networkIP # after use private ip for mysql replication settings

@@ -1,0 +1,7 @@
+credentials_path    = "../../config/stage-provisioner-credentials.json"
+os_login_user       = "sa_103954882136074866743"
+private_key_path    = "../../config/stage-provisioner-key"
+project_name        = "ci-cid-stage"
+region              = "asia-northeast1"
+zone                = "asia-northeast1-a"
+domain              = "phu-le.dev"
